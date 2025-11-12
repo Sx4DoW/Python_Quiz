@@ -53,9 +53,6 @@ export FLASK_ENV=development
 4. Initialize the database and run the app (once implemented):
 
 ```bash
-flask db init   # if using Flask-Migrate
-flask db migrate
-flask db upgrade
 flask run
 ```
 
@@ -77,12 +74,3 @@ flask run
 - Validate and sanitize user input (forms, city names).
 - Rate-limit weather API calls and cache results for a short time to avoid hitting API quotas.
 - Handle duplicate usernames/nicknames gracefully and show helpful validation messages.
-
-## Next steps I can implement for you
-
-- Scaffold the Flask app (project structure, routes, basic templates).
-- Add authentication (register/login/logout) and user model with SQLite.
-- Implement the quiz engine with randomized questions and leaderboard updates.
-- Integrate a public weather API and build the 3-day forecast widget.
-
-Tell me which task you'd like me to start with and I'll scaffold it now.

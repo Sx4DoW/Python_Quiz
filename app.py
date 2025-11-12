@@ -1,11 +1,29 @@
 # Importing bleach to sanitize user input for possible xss attacks
 import bleach
+import os
+from dotenv import load_dotenv
 
 from flask import Flask, render_template, request
 from api.services import get_weather_forecast
 from api import api_bp
+from db.tables import db
+from db.init_db import init_db
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
+
+# Database configuration
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS') == 'True'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
+# Initialize database
+db.init_app(app)
+
+# Auto-create tables on first run
+init_db(app)
 
 app.register_blueprint(api_bp)
 

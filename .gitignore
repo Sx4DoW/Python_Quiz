@@ -5,3 +5,5 @@ __pycache__/
 .env
 traccia.md
 cache_cities.json
+*.db
+instance/
