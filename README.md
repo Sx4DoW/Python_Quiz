@@ -151,7 +151,7 @@ pip install -r requirements.txt
 ```env
 # Flask Configuration
 SECRET_KEY=your-secret-key-here
-FLASK_ENV=development
+FLASK_ENV=production
 
 # Database Configuration
 SQLALCHEMY_DATABASE_URI=sqlite:///instance/quiz.db
