@@ -150,7 +150,7 @@ pip install -r requirements.txt
 4. **Create `.env` file** in the root directory:
 ```env
 # Flask Configuration
-SECRET_KEY=your-secret-key-here-change-this-in-production
+SECRET_KEY=your-secret-key-here
 FLASK_ENV=development
 
 # Database Configuration
